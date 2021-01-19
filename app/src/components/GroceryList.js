@@ -46,7 +46,6 @@ export default function TodoItem({item, value}) {
         const newArray = itemFromStorage.filter(todo => todo.id !== item.id)
         updateItems(newArray)
     }
-
     return (
         <div className="list-box">
 

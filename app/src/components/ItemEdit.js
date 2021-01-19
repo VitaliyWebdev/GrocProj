@@ -1,14 +1,12 @@
 import React, {useContext} from 'react';
 import {Context} from "../context";
 
-
 export default function EditField({item}) {
     let {updateItems} = useContext(Context);
 
     const changeValue = (event) => {
         event.preventDefault();
         const inputValue = event.target[0].value
-
         const itemFromStorage = JSON.parse(localStorage.getItem('todos'));
 
         for (const element of itemFromStorage) {
@@ -18,10 +16,7 @@ export default function EditField({item}) {
         }
         updateItems(itemFromStorage)
     }
-
-
     return (
-
         <div>
             <form action="" onSubmit={changeValue}>
                 <input type="text"/>

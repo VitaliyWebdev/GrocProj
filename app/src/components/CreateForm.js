@@ -3,10 +3,7 @@ import '../styles.css'
 import GroceryList from "./GroceryList";
 import {Context} from "../context";
 
-
 export default function TodosCreateForm() {
-
-
     const [listItems, setListItems] = useState(JSON.parse(localStorage.getItem('todos')) || []);
     const [countId, setCountId] = useState(0);
     const [myInput, setMyInput] = useState('');
@@ -15,7 +12,6 @@ export default function TodosCreateForm() {
     const addItem = () => {
         setCountId(count => count + 1)
         setListItems([...listItems, {
-            // value:myRef.current.value,
             value: myInput,
             id: countId,
             flag: true,
