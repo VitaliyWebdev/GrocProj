@@ -3,15 +3,13 @@ import '../styles.css'
 import GroceryList from "./GroceryList";
 import {Context} from "../context";
 import {Button} from 'antd';
-//Натискаючи на айтем брати айді айтема і переходити на сторінку того айтема http://localhost:3000/item/:id
-// cart component from AntDesign
-//delete -> modal window (are you sure (yes / no))
+
+
 export default function TodosCreateForm() {
     const [listItems, setListItems] = useState(JSON.parse(localStorage.getItem('todos')) || []);
     const [countId, setCountId] = useState(0);
     const [myInput, setMyInput] = useState('');
     const [priority, setPriority] = useState(0);
-
 
     const addItem = () => {
         setCountId(count => count + 1)
@@ -33,10 +31,9 @@ export default function TodosCreateForm() {
         setListItems(updatedItems);
 
     };
-    console.log(listItems);
+    console.log(listItems, 'sssssssssssss');
     return (
         <Context.Provider value={{updateItems, listItems}}>
-
             <header>
                 <div className="description">
                     Here you can add items to list

@@ -1,15 +1,12 @@
 import React, {useContext} from 'react';
 import {Context} from "../context";
 import '../styles.css'
-import {Button} from "antd";
 
-export const  EditField = ({item}) => {
+export const EditField = ({item}) => {
     const {updateItems} = useContext(Context);
 
     const changeValue = (event) => {
-        console.log('adadada')
         event.preventDefault();
-        console.log(event.target);
         const inputValue = event.target[0].value
         const itemFromStorage = JSON.parse(localStorage.getItem('todos'));
 

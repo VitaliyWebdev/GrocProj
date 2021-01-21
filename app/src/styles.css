@@ -39,14 +39,15 @@ font-size: 20px;
 }
 
 .list-box {
-    background-color: darkorange;
-    margin: 20px auto;
+    background-color: #b3babf;
+    margin: 20px 30px 20px 400px;
     max-width: 500px;
     height: 80px;
     border-radius: 50px;
     display: flex;
     align-items: center;
 position: relative;
+    padding: 10px;
 }
 
 .item {
@@ -116,9 +117,9 @@ header {
     top: 33px;
     left: -104px;
 }
-.edit-area{
-    position: absolute;
-    right: -346px;
+.edit-area-box{
+    margin: auto 0;
+
 }
 .edit-input{
     border-radius: 20px;
@@ -129,6 +130,10 @@ header {
 }
 .edit-field-btn{
     border-radius: 20px !important;
+    outline: none;
 }
+.main-grocery-list{
+    display: flex;
 
+}
 
