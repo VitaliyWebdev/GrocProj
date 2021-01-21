@@ -2,12 +2,16 @@ import React, {useEffect, useState} from 'react'
 import '../styles.css'
 import GroceryList from "./GroceryList";
 import {Context} from "../context";
-
+import {Button} from 'antd';
+//Натискаючи на айтем брати айді айтема і переходити на сторінку того айтема http://localhost:3000/item/:id
+// cart component from AntDesign
+//delete -> modal window (are you sure (yes / no))
 export default function TodosCreateForm() {
     const [listItems, setListItems] = useState(JSON.parse(localStorage.getItem('todos')) || []);
     const [countId, setCountId] = useState(0);
     const [myInput, setMyInput] = useState('');
     const [priority, setPriority] = useState(0);
+
 
     const addItem = () => {
         setCountId(count => count + 1)
@@ -27,30 +31,41 @@ export default function TodosCreateForm() {
     const updateItems = (updatedItems) => {
         localStorage.setItem("todos", JSON.stringify(updatedItems));
         setListItems(updatedItems);
+
     };
+    console.log(listItems);
     return (
         <Context.Provider value={{updateItems, listItems}}>
-            <div>
-                <input type="text" placeholder="write product you need" className='add-input' value={myInput}
+
+            <header>
+                <div className="description">
+                    Here you can add items to list
+                </div>
+                <input type="text" placeholder="Write product you need" className='add-input' value={myInput}
                        onChange={(e) => {
                            const {target: {value}} = e
+                           //const {value} = e.target;
                            setMyInput(value)
                        }}/>
-                <span>write down priority:</span>
+                <span className="priority-text">write down priority:</span>
                 <input type="number" className='priority-input' value={priority}
                        onChange={(e) => {
                            const {target: {value}} = e
                            setPriority(value)
                        }}/>
 
-                <button onClick={() => addItem()}>
+                <Button type="primary" onClick={addItem} style={{margin: 'auto 10px'}}>
                     Add to grocery list
-                </button>
+                </Button>
+            </header>
+            <div>
+                {!!listItems && listItems.sort((a, b) => {
+                    return b.priority - a.priority
+                }).map((item, index, array) => <GroceryList key={index} item={item} value={item.value} flag={item.flag}
+                                                            listItems={array}/>)}
 
-                {!!listItems && listItems.map((item, index, array) => <GroceryList key={index} item={item}
-                                                                                   value={item.value} flag={item.flag}
-                                                                                   listItems={array}/>)}
             </div>
         </Context.Provider>
     );
 }
+//зробити сортіровку

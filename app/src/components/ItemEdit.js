@@ -1,11 +1,15 @@
 import React, {useContext} from 'react';
 import {Context} from "../context";
+import '../styles.css'
+import {Button} from "antd";
 
-export default function EditField({item}) {
-    let {updateItems} = useContext(Context);
+export const  EditField = ({item}) => {
+    const {updateItems} = useContext(Context);
 
     const changeValue = (event) => {
+        console.log('adadada')
         event.preventDefault();
+        console.log(event.target);
         const inputValue = event.target[0].value
         const itemFromStorage = JSON.parse(localStorage.getItem('todos'));
 
@@ -17,10 +21,10 @@ export default function EditField({item}) {
         updateItems(itemFromStorage)
     }
     return (
-        <div>
-            <form action="" onSubmit={changeValue}>
-                <input type="text"/>
-                <button>change</button>
+        <div className="edit-area">
+            <form action="" onSubmit={changeValue} className="edit-form">
+                <input type="text" className="edit-input"/>
+                <button className="edit-field-btn">change</button>
             </form>
 
         </div>

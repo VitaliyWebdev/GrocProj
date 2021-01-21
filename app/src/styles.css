@@ -11,67 +11,124 @@
     background-color: green;
     min-width: 100px;
 }
+
 .add-btn:hover {
     color: black;
     background-color: lemonchiffon;
 }
-.add-form{
-    margin-top:20px;
+
+.add-form {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-.add-input{
-    min-width: 300px;
-    min-height: 40px;
-margin: 0 20px;
+
+.add-input {
+    width: 250px;
+    height: 50px;
     border-radius: 5px;
+    margin: auto 0;
+font-size: 20px;
 }
-.m-l5{
+.add-input ::placeholder{
+    color: red;
+}
+
+.m-l5 {
     margin-left: 5px;
 }
-.list-box{
-    background-color: lightgreen;
+
+.list-box {
+    background-color: darkorange;
     margin: 20px auto;
     max-width: 500px;
     height: 80px;
-border-radius: 3px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
-
+position: relative;
 }
-.item{
-    display: flex;
 
+.item {
+    display: flex;
     margin: 0 auto;
-      font-weight: bold;
+    font-weight: bold;
     font-size: 22px;
 
 }
-.edit-btn{
+
+.edit-btn {
     width: 50px;
     height: 30px;
     background-color: lightgray;
 }
-.delete-btn{
+
+.delete-btn {
     width: 50px;
     height: 30px;
-background-color: red;;
+    background-color: red;;
 }
-.plus-item-btn{
+
+.plus-item-btn {
     width: 50px;
     height: 30px;
     background-color: green;
 }
-.minus-item-btn{
+
+.minus-item-btn {
     width: 50px;
     height: 30px;
     background-color: pink;
 }
-.priority-input{
-    min-width: 40px;
-    min-height: 30px;
-    margin: 0 20px;
-    border-radius: 5px;
 
+.priority-input {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 25px;
+    margin: auto 0;
+    outline: none;
+    text-align: center;
 }
+header {
+    background-color: tomato;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.priority-text{
+    margin: auto 16px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.description{
+    position: absolute;
+    left:20px;
+    top: 34px;
+    font-size: 19px;
+    border-bottom: 1px solid black;
+    color: black;
+    font-weight: bold;
+}
+.plus-minus-btns{
+    position: absolute;
+    top: 33px;
+    left: -104px;
+}
+.edit-area{
+    position: absolute;
+    right: -346px;
+}
+.edit-input{
+    border-radius: 20px;
+    outline: none;
+}
+.edit-form{
+    display: flex;
+}
+.edit-field-btn{
+    border-radius: 20px !important;
+}
+
 
